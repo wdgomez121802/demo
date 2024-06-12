@@ -1,0 +1,45 @@
+# Amazon Bedrock Titan Image Generator with Cognito Authentication
+
+This project uses Streamlit to create a web application that generates images using Amazon Bedrock Titan, with user authentication handled by Amazon Cognito.
+
+## Setup
+
+1. Clone the repository:
+   ```
+   git clone <repository-url>
+   cd <repository-name>
+   ```
+
+2. Create a virtual environment and activate it:
+   ```
+   python -m venv venv
+   source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+   ```
+
+3. Install the required dependencies:
+   ```
+   pip install -r requirements.txt
+   ```
+
+4. Set up your AWS credentials using the AWS CLI:
+   ```
+   aws configure
+   ```
+
+5. Create a `.env` file in the project root and add your AWS and Cognito credentials:
+   ```
+   COGNITO_USER_POOL_ID=your_user_pool_id
+   COGNITO_CLIENT_ID=your_client_id
+   COGNITO_CLIENT_SECRET=your_client_secret
+   AWS_ACCESS_KEY_ID=your_access_key_id
+   AWS_SECRET_ACCESS_KEY=your_secret_access_key
+   ```
+
+6. Run the Streamlit app:
+   ```
+   streamlit run app.py
+   ```
+
+## Usage
+
+Enter a prompt and a seed value in the Streamlit interface to generate an image. The generated image will be saved to the specified S3 bucket.
